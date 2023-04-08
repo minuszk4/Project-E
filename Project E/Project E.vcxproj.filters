@@ -150,9 +150,6 @@
     <ClCompile Include="Sources\GameObjects\tachmonunder.cpp">
       <Filter>Source Files\GameObjects\Creep</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\GameObjects\CreepBatunder.cpp">
-      <Filter>Source Files\GameObjects\Creep</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\GameObjects\DeathUnder.cpp">
       <Filter>Source Files\GameObjects\Player</Filter>
     </ClCompile>
@@ -160,6 +157,9 @@
       <Filter>Source Files\GameObjects\Creep</Filter>
     </ClCompile>
     <ClCompile Include="Sources\GameObjects\Knight.cpp">
+      <Filter>Source Files\GameObjects\Creep</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\CreepBatunder.cpp">
       <Filter>Source Files\GameObjects\Creep</Filter>
     </ClCompile>
   </ItemGroup>
