@@ -18,17 +18,17 @@ void PSJump::Update(float deltaTime)
 	m_currentTime += deltaTime;
 
 	float v = 10 * m_currentTime;
-	if (-m_Player->getHitBox()->getVelocity().y * deltaTime + v >= 0) {
+	if (-m_Player->getHitBox()->getVelocity().y*0.7 * deltaTime + v >= 0) {
 		m_Player->changeNextState(FALL);
 		m_currentTime = 0.f;
 	}
-	else m_Player->getHitBox()->move(0, -m_Player->getHitBox()->getVelocity().y * deltaTime+v);
+	else m_Player->getHitBox()->move(0, -m_Player->getHitBox()->getVelocity().y *0.7* deltaTime+v);
 	// có thể xóa đi để chỉ nhảy thẳng đứng 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		m_Player->getHitBox()->move(-m_Player->getHitBox()->getVelocity().x * deltaTime, 0);
+		m_Player->getHitBox()->move(-m_Player->getHitBox()->getVelocity().x *0.7* deltaTime, 0);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		m_Player->getHitBox()->move(m_Player->getHitBox()->getVelocity().x * deltaTime, 0);
+		m_Player->getHitBox()->move(m_Player->getHitBox()->getVelocity().x *0.7* deltaTime, 0);
 	}
 
 	m_Animation->setPosition(m_Player->getHitBox()->getPosition());

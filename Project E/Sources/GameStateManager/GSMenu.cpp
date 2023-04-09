@@ -66,7 +66,7 @@ void GSMenu::Init()
 
 
 	//Background
-	sf::Texture* texture = DATA->getTexture("Background layers/Background");
+	sf::Texture* texture = DATA->getTexture("Background layers/Background copy");
 	m_Background.setTexture(*texture);
 	m_Background.setOrigin((sf::Vector2f)texture->getSize() / 2.f);
 	m_Background.setPosition(screenWidth / 2, screenHeight - texture->getSize().y/2);

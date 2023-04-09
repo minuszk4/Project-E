@@ -28,7 +28,6 @@ void GSPlay::Init()
 	printf("Play game");
 	m_Background.Init();
 	m_Player.Init();
-	//m_Boss.Init(m_CollisionManager);
 	m_CollisionManager.addObj(m_Player.getHitBox());
 	m_CreepManager.Init(m_CollisionManager);
 
@@ -47,8 +46,8 @@ void GSPlay::Update(float deltaTime)
 {
 	// tăng tốc trò chơi 
 	bost += deltaTime;
-	if (bost > 10) {
-		deltaTime *= 1.1;
+	if (bost > 100){
+		deltaTime *= 1.2;
 	}
 	if (m_Player.getHitBox()->isAlive()) {
 		m_currentTime += deltaTime;
@@ -63,7 +62,6 @@ void GSPlay::Update(float deltaTime)
 	if (m_Player.getHitBox()->isAlive()) m_Background.Update(deltaTime);
 	m_Player.Update(deltaTime);
 	if (m_Player.getHitBox()->isAlive()) {
-		//m_Boss.Update(deltaTime);
 		m_CreepManager.Update(deltaTime);
 		m_CollisionManager.Update();
 	}
@@ -72,7 +70,6 @@ void GSPlay::Update(float deltaTime)
 void GSPlay::Render(sf::RenderWindow* window)
 {
 	m_Background.Render(window);
-	//m_Boss.Render(window);
 	m_Player.Render(window);
 	m_CreepManager.Render(window);
 	window->draw(m_Score);

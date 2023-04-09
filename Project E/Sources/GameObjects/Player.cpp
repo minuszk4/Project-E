@@ -84,7 +84,7 @@ void Player::Update(float deltaTime)
 void Player::Render(sf::RenderWindow* window)
 {
 	m_currentState->Render(window);
-	window->draw(*m_HitBox);
+	//window->draw(*m_HitBox);
 }
 
 HitBox* Player::getHitBox()

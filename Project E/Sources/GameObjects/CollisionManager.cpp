@@ -24,24 +24,6 @@ void CollisionManager::Update()
                 a->setAlive(false);
                 b->setAlive(false);
             }
-
-            if (a->getTag() == PLAYER && b->getTag() == BOSS) {
-                a->setAlive(false);
-            }
-            
-            if (a->getTag() == PLAYER && b->getTag() == BOSS_Bullet) {
-                a->setAlive(false);
-                b->setAlive(false);
-            }
-
-            if (a->getTag() == CREEP && b->getTag() == BOSS_Bullet) {
-                a->setAlive(false);
-                b->setAlive(false);
-            }
-            if (a->getTag() == CREEP && b->getTag() == BOSS) {
-                a->setAlive(false);
-                b->setAlive(false);
-            }
         }
     }
 }

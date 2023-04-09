@@ -41,7 +41,8 @@ void Creep::Render(sf::RenderWindow* window)
 {
 	if (m_stop) return;
 	window->draw(*m_currentAni);
-	window->draw(*m_HitBox);
+	//tắt hitbox
+	//->draw(*m_HitBox);
 }
 
 void Creep::Reset()

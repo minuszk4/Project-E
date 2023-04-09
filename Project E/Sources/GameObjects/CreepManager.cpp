@@ -194,7 +194,7 @@ void CreepManager::SpawnGirl()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand()%(150-50+1)+50, groundY-25));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand()%(150-50+1)+50, groundY-45));
 	// van toc 
 	creep->getHitBox()->setVelocity(sf::Vector2f(200+rand()%100,0));
 	creep->Reset();
@@ -211,7 +211,7 @@ void CreepManager::SpawnGirlunder()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 25));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 45));
 	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
 }
@@ -227,7 +227,7 @@ void CreepManager::Spawntachmon()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY - 25));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY - 45));
 
 	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
@@ -244,7 +244,7 @@ void CreepManager::Spawntachmonunder()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 25));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 55));
 	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
 }
@@ -277,7 +277,7 @@ void CreepManager::SpawnMushroom()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 25));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 55));
 	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
 }
