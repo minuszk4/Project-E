@@ -212,7 +212,7 @@ void CreepManager::SpawnGirlunder()
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
 	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 45));
-	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
+	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 40, 0));
 	creep->Reset();
 }
 
@@ -228,8 +228,8 @@ void CreepManager::Spawntachmon()
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
 	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY - 45));
-
-	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
+	// van toc
+	creep->getHitBox()->setVelocity(sf::Vector2f(300 + rand() % 100, 0));
 	creep->Reset();
 }
 
@@ -245,7 +245,7 @@ void CreepManager::Spawntachmonunder()
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
 	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 55));
-	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
+	creep->getHitBox()->setVelocity(sf::Vector2f(230 + rand() % 100, 0));
 	creep->Reset();
 }
 
@@ -262,7 +262,7 @@ void CreepManager::SpawnKnight()
 	creep->getHitBox()->setAlive(true);
 	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY - 84));
 	// van toc 
-	creep->getHitBox()->setVelocity(sf::Vector2f(150 + rand() % 100, 0));
+	creep->getHitBox()->setVelocity(sf::Vector2f(100 + rand() % 100, 0));
 	creep->Reset();
 }
 
@@ -277,7 +277,7 @@ void CreepManager::SpawnMushroom()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 50, groundY + 55));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (50 + 1) + 50, groundY + 55));
 	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
 }
@@ -294,6 +294,7 @@ void CreepManager::SpawnBat()
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
 	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (250 - 110 + 1) + 60, groundY-(rand()%(200 - 100 + 1) + 100)));
+	creep->getHitBox()->setVelocity(sf::Vector2f(200 + rand() % 100, 0));
 	creep->Reset();
 }
 
@@ -308,7 +309,7 @@ void CreepManager::SpawnBatunder()
 	}
 	if (creep == nullptr) return;
 	creep->getHitBox()->setAlive(true);
-	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (150 - 50 + 1) + 10, groundY + (rand() % (200 - 100 + 1)+100 )));
+	creep->setStartPoint(sf::Vector2f(screenWidth + rand() % (250 - 50 + 1) + 10, groundY + (rand() % (200 - 100 + 1)+100 )));
 	creep->Reset();
 }
 

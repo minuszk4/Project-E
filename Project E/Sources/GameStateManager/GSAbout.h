@@ -16,5 +16,4 @@ private:
 	sf::Sprite m_Background;
 	std::list<GameButton*> m_ListBtn;
 	sf::Text m_Title;
-
 };

@@ -50,13 +50,14 @@ void GSSetting::Init()
 	m_ListBtn.push_back(button);
 
 	//Background
-	sf::Texture* texture = DATA->getTexture("Background layers/Background");
+	sf::Texture* texture = DATA->getTexture("Background layers/Background Copy");
 	m_Background.setTexture(*texture);
 	m_Background.setOrigin((sf::Vector2f)texture->getSize() / 2.f);
 	m_Background.setPosition(screenWidth / 2, screenHeight - texture->getSize().y / 2);
 
 	//Tile Game
 	m_Title.setString("SETTINGS");
+	m_Title.setFillColor(sf::Color(0, 0, 0));
 	m_Title.setFont(*DATA->getFont("ARCADE"));
 	m_Title.setPosition(screenWidth/2,screenHeight/5);
 }

@@ -59,18 +59,21 @@ void GSEnd::Init()
 
 	//Tile Game
 	m_Title.setString("END GAME!");
+	m_Title.setFillColor(sf::Color(0, 0, 0));
 	m_Title.setFont(*DATA->getFont("ARCADE"));
 	m_Title.setPosition(screenWidth / 2, screenHeight / 5);
 
 	//Best Score
 	m_bestScore.setString("BEST SOCRE: "+std::to_string(ScoreManager::GetInstance()->getBestScore()));
+	m_bestScore.setFillColor(sf::Color(0, 0, 0));
 	m_bestScore.setFont(*DATA->getFont("ARCADE"));
-	m_bestScore.setPosition(screenWidth / 2, screenHeight / 2);
+	m_bestScore.setPosition(screenWidth / 2, screenHeight / 2+50);
 
 	//current Score
 	m_currentScore.setString("YOUR SOCRE: " + std::to_string(ScoreManager::GetInstance()->getCurrentScore()));
+	m_currentScore.setFillColor(sf::Color(0, 0, 0));
 	m_currentScore.setFont(*DATA->getFont("ARCADE"));
-	m_currentScore.setPosition(screenWidth / 2, screenHeight / 2 + 50);
+	m_currentScore.setPosition(screenWidth / 2, screenHeight / 2 + 100);
 }
 
 void GSEnd::Update(float deltaTime)

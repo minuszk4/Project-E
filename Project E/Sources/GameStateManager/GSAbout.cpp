@@ -1,4 +1,4 @@
-#include "GSAbout.h"
+﻿#include "GSAbout.h"
 
 GSAbout::GSAbout()
 {
@@ -33,15 +33,19 @@ void GSAbout::Init()
 	m_ListBtn.push_back(button);
 
 	//Background
-	sf::Texture* texture = DATA->getTexture("Background layers/Background");
+	sf::Texture* texture = DATA->getTexture("Background layers/guide");
 	m_Background.setTexture(*texture);
 	m_Background.setOrigin((sf::Vector2f)texture->getSize() / 2.f);
 	m_Background.setPosition(screenWidth / 2, screenHeight - texture->getSize().y / 2);
-
+/*
 	//Tile Game
 	m_Title.setString("ABOUT");
+	m_Title.setFillColor(sf::Color(0, 0, 0));
 	m_Title.setFont(*DATA->getFont("ARCADE"));
 	m_Title.setPosition(screenWidth / 2, screenHeight / 5);
+	
+*/
+
 }
 
 void GSAbout::Update(float deltaTime)

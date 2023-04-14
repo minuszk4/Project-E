@@ -2,7 +2,7 @@
 
 void CreepBat::Init()
 {
-	m_HitBox = new HitBox(sf::Vector2i(35, 35));
+	m_HitBox = new HitBox(sf::Vector2i(20, 30));
 	m_HitBox->Init(sf::Vector2f(300, 0));
 	setStartPoint(sf::Vector2f(screenWidth, groundY - 170));
 	m_HitBox->setPosition(screenWidth, groundY-170);

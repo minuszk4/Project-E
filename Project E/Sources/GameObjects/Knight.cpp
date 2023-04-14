@@ -2,7 +2,7 @@
 
 void CreepKnight::Init()
 {
-	m_HitBox = new HitBox(sf::Vector2i(50, 70));
+	m_HitBox = new HitBox(sf::Vector2i(50, 50));
 	m_HitBox->Init(sf::Vector2f(200, 0));
 	setStartPoint(sf::Vector2f(screenWidth , groundY - 70));
 	m_HitBox->setPosition(screenWidth, groundY );

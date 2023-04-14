@@ -43,21 +43,23 @@ void GSHighScore::Init()
 	m_ListBtn.push_back(button);
 
 	//Background
-	sf::Texture* texture = DATA->getTexture("Background layers/Background");
+	sf::Texture* texture = DATA->getTexture("Background layers/hight_score");
 	m_Background.setTexture(*texture);
 	m_Background.setOrigin((sf::Vector2f)texture->getSize() / 2.f);
 	m_Background.setPosition(screenWidth / 2, screenHeight - texture->getSize().y / 2);
 
 	//Tile Game
 	m_Title.setString("HIGH SCORE");
+	m_Title.setFillColor(sf::Color::White);
 	m_Title.setFont(*DATA->getFont("ARCADE"));
-	m_Title.setPosition(screenWidth / 2, screenHeight / 5);
+	m_Title.setPosition(screenWidth / 3+90, screenHeight / 5-10);
 	//ListScore
 	for (int i = 0; i < ScoreManager::GetInstance()->getNum(); i++) {
 		sf::Text* t= new sf::Text();
 		t->setString(std::to_string(ScoreManager::GetInstance()->getHighScore()[i]));
+		t->setFillColor(sf::Color::White);
 		t->setFont(*DATA->getFont("ARCADE"));
-		t->setPosition(screenWidth / 2, screenHeight / 2+20*i);
+		t->setPosition(screenWidth / 2+150, screenHeight/5+40+60*i);
 		m_ListScore.push_back(t);
 	}
 }

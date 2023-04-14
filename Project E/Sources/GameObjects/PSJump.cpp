@@ -18,7 +18,7 @@ void PSJump::Update(float deltaTime)
 	m_currentTime += deltaTime;
 
 	float v = 10 * m_currentTime;
-	if (-m_Player->getHitBox()->getVelocity().y*0.7 * deltaTime + v >= 0) {
+	if (-m_Player->getHitBox()->getVelocity().y*0.8 * deltaTime + v >= 0) {
 		m_Player->changeNextState(FALL);
 		m_currentTime = 0.f;
 	}

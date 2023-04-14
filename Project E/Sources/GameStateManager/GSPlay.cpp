@@ -45,22 +45,27 @@ void GSPlay::Update(float deltaTime)
 
 {
 	// tăng tốc trò chơi 
-	bost += deltaTime;
-	if (bost > 100){
-		deltaTime *= 1.2;
+	float temp = deltaTime;
+	bost = ScoreManager::GetInstance()->getCurrentScore();
+	if (bost>90){
+		deltaTime *= 1.6;
 	}
+	else if(bost>5){
+		deltaTime *= 1.3;
+	}
+
 	if (m_Player.getHitBox()->isAlive()) {
-		m_currentTime += deltaTime;
+		m_currentTime += temp;
 		if (m_currentTime >= 0.5f) {
 			m_currentScore++;
 			m_Score.setString(std::to_string(m_currentScore));
+			ScoreManager::GetInstance()->setCurrentScore(m_currentScore);
 			m_currentTime -= 1.f;
 		}
 	}
 	else ScoreManager::GetInstance()->setCurrentScore(m_currentScore);
-
 	if (m_Player.getHitBox()->isAlive()) m_Background.Update(deltaTime);
-	m_Player.Update(deltaTime);
+	m_Player.Update(temp);
 	if (m_Player.getHitBox()->isAlive()) {
 		m_CreepManager.Update(deltaTime);
 		m_CollisionManager.Update();
