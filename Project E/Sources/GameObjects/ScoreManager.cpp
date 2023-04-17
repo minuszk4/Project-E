@@ -38,25 +38,17 @@ int ScoreManager::getBestScore()
 
 void ScoreManager::readFile()
 {
-//	std::fstream input;
-//	input.open("Score.data", std::ios::binary | std::ios::in);
-//	input.read((char*)m_HighScore, sizeof(m_HighScore));
-//	input.close();
 	std::fstream input;
-	input.open("Score.txt", std::ios::in);
-	input >> m_HighScore[0] >> m_HighScore[1] >> m_HighScore[2] >> m_HighScore[3] >> m_HighScore[4];
+	input.open("Score.data", std::ios::binary | std::ios::in);
+	input.read((char*)m_HighScore, sizeof(m_HighScore));
 	input.close();
 }
 
 void ScoreManager::writeFile()
 {
-//	std::fstream output;
-//	output.open("Score.txt", std::ios::binary | std::ios::out);
-//	output.write((char*)m_HighScore, sizeof(m_HighScore));
-//	output.close();
 	std::fstream output;
-	output.open("Score.txt", std::ios::out);
-	output << m_HighScore[0] << " " << m_HighScore[1] << " " << m_HighScore[2] << " " << m_HighScore[3] << " " << m_HighScore[4];
+	output.open("Score.data", std::ios::binary | std::ios::out);
+	output.write((char*)m_HighScore, sizeof(m_HighScore));
 	output.close();
 }
 

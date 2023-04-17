@@ -28,10 +28,12 @@ void GSEnd::Init()
 	button->Init("menu");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setSize(sf::Vector2f(50, 50));
-	button->setPosition(screenWidth / 2 + screenWidth / 12, screenHeight - screenHeight / 8-50);
+	button->setPosition(screenWidth / 2 + screenWidth / 12, screenHeight - screenHeight / 8);
 	button->setOnClick([]() {
 		GSM->PopState(); 
-		GSM->ChangeState(StateTypes::MENU);
+		GSM->PopState(); 
+		ScoreManager::GetInstance()->UpdateHighScore();
+		ScoreManager::GetInstance()->writeFile();
 	});
 	m_ListBtn.push_back(button);
 
@@ -40,14 +42,15 @@ void GSEnd::Init()
 	button->Init("restart");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setSize(sf::Vector2f(50, 50));
-	button->setPosition(screenWidth / 2 - screenWidth / 12, screenHeight - screenHeight / 8-50);
+	button->setPosition(screenWidth / 2 - screenWidth / 12, screenHeight - screenHeight / 8);
 	button->setOnClick([]() {
 		GSM->PopState();
 		GSM->ChangeState(StateTypes::PLAY);
+		ScoreManager::GetInstance()->UpdateHighScore();
+		ScoreManager::GetInstance()->writeFile();
 		});
 	m_ListBtn.push_back(button);
-	ScoreManager::GetInstance()->UpdateHighScore();
-	ScoreManager::GetInstance()->writeFile();
+
 	//Background
 	sf::Texture* texture = DATA->getTexture("Background layers/Background copy");
 	m_Background.setTexture(*texture);
@@ -58,19 +61,19 @@ void GSEnd::Init()
 	m_Title.setString("END GAME!");
 	m_Title.setFillColor(sf::Color(0, 0, 0));
 	m_Title.setFont(*DATA->getFont("ARCADE"));
-	m_Title.setPosition(screenWidth / 2-100, screenHeight / 5);
+	m_Title.setPosition(screenWidth / 2, screenHeight / 5);
 
 	//Best Score
-	m_bestScore.setString("BEST SCORE: "+std::to_string(ScoreManager::GetInstance()->getBestScore()));
+	m_bestScore.setString("BEST SOCRE: "+std::to_string(ScoreManager::GetInstance()->getBestScore()));
 	m_bestScore.setFillColor(sf::Color(0, 0, 0));
 	m_bestScore.setFont(*DATA->getFont("ARCADE"));
-	m_bestScore.setPosition(screenWidth / 2-120, screenHeight / 2-100);
+	m_bestScore.setPosition(screenWidth / 2, screenHeight / 2+50);
 
 	//current Score
-	m_currentScore.setString("YOUR SCORE: " + std::to_string(ScoreManager::GetInstance()->getCurrentScore()));
+	m_currentScore.setString("YOUR SOCRE: " + std::to_string(ScoreManager::GetInstance()->getCurrentScore()));
 	m_currentScore.setFillColor(sf::Color(0, 0, 0));
 	m_currentScore.setFont(*DATA->getFont("ARCADE"));
-	m_currentScore.setPosition(screenWidth / 2-120, screenHeight / 2 + 50);
+	m_currentScore.setPosition(screenWidth / 2, screenHeight / 2 + 100);
 }
 
 void GSEnd::Update(float deltaTime)
