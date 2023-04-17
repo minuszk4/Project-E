@@ -18,4 +18,5 @@ public:
 private:
 	void (*m_btnClickFunc)();
 	bool m_isHandling;
+	bool m_isClicked;
 };
